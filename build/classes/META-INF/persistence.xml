@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="OilLawPostgresJPA" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.olrcorp.synchronicity.jpa.entities.WellForm</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.OAPDocument</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.LogImage</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.NmOcdWellForm</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.NmOcdLogFile</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.NmOcdAdminOrder</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.NmOcdHearingOrder</class>
+		<properties>
+	      	<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+   		  	<property name="javax.persistence.jdbc.url"
+       			 value="jdbc:postgresql://extranet.oil-law.com/oillaw_test" />
+      		<property name="javax.persistence.jdbc.user" value="testing" />
+      		<property name="javax.persistence.jdbc.password" value="testDriven" />
+	    </properties>
+	</persistence-unit>
+	<persistence-unit name="OilLawSybaseJPA">
+		<class>com.olrcorp.synchronicity.jpa.entities.ImageFile</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.Oqueue</class>
+		<class>com.olrcorp.synchronicity.jpa.entities.Order</class>
+		<properties>
+	      	<property name="javax.persistence.jdbc.driver" value="com.sybase.jdbc3.jdbc.SybDriver" />
+   		  	<property name="javax.persistence.jdbc.url"
+       			 value="jdbc:sybase:Tds:sled7.oil-law.net:2638" />
+      		<property name="javax.persistence.jdbc.user" value="dba" />
+      		<property name="javax.persistence.jdbc.password" value="g8ldm9ne" />
+	    </properties>
+	</persistence-unit>
+</persistence>
